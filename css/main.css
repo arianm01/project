@@ -1,0 +1,70 @@
+body {
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    font-family: 'Ubuntu', sans-serif;
+}
+.main{
+    background: #00d2ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-bottom: 1%;
+    margin: auto;
+    border-radius: 5%;
+}
+.sign{
+    padding-top: 10%;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+.name,.pass,.phone,.profilePic{
+    width: 74%;
+    color: #606c88;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10%;
+    margin-left: 13%;
+    text-align: center;
+    outline: none;
+}
+form.form1{
+    padding-top: 30px;
+}
+.name:focus,.pass:focus,.phone:focus,.profilePic:focus{
+    border: 2px solid black;
+}
+.submit{
+    cursor: pointer;
+    border-radius: 5em;
+    color:#00d2ff;
+    background-color: white;
+    border: 0px;
+    padding: 10px 40px;
+    /* margin-left: 45%; */
+    font-size: 20px;
+}
+[class*="col-"]{
+    width: 100%;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }

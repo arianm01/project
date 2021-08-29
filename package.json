@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "idb": "^6.1.2"
+  }
+}
