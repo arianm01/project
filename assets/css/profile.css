@@ -43,9 +43,7 @@ header h1 {
     position: fixed;
     z-index: 100;
     border-radius: 10px;
-    width: 80%;
     top: 20%;
-    left: 10%;
     background: #8f94fb;  /* fallback for old browsers */
     box-shadow: 0 1px 10px black ;
     display: none;
@@ -76,6 +74,9 @@ header h1 {
     margin: 3%;
     text-align: center;
     outline: none;
+}
+.btn:focus{
+    border: 2px solid black;
 }
 .modal .modal__actions {
     padding: 3%;
@@ -203,6 +204,9 @@ div p{
     cursor: pointer;
     padding: 1%;
     margin: 0 1%;
+}
+.btn-show:focus{
+    border: none;
 }
 [class*="col-"]{
     width: 100%;

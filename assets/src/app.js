@@ -58,3 +58,8 @@ function valid(name, phone, password, pic) {
   }
   return true;
 }
+
+nameIn.innerText = '';
+phoneIn.innerText = '';
+passIn.innerText = '';
+profileIn.innerText = '';
