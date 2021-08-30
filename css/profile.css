@@ -4,3 +4,49 @@
 html{
     font-family: 'Ubuntu', sans-serif;
 }
+
+body{
+    margin: 0;
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button:focus{
+    outline: none;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    background: #34e89e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+header h1 {
+    margin: 2%;
+    color: whitesmoke;
+    font-size: 25px;
+}
+header button{
+    padding: 0.75% 1.5%;
+    border-radius: 20px;
+    outline: none;
+    background: #3f4c6b;
+  border-color: #606c88;
+  border: 2px solid darkslategray;
+  color: #34e89e; 
+    box-shadow: none;
+    cursor: pointer;
+}
+.modal{
+    display: none;
+}
+header button:hover,
+header button:active {
+    color: red;
+    background-color: wheat;
+    border: 2px solid wheat;
+}
