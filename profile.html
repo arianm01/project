@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="./css/profile.css">
     <script src="./src/app.js" defer></script>
     <title>Profile</title>
@@ -11,11 +12,11 @@
   <body>
     <div id="backdrop"></div>
     <div class="modal" id="enter-modal">
-      <h2 class="modal__title">please enter your password</h2>
-      <input name="password" id="password" class="modal__content"/>
-      <div class="modal__actions">
-        <button class="btn btn--passive">Log out(Cancel)</button>
-        <button class="btn btn--danger">Enter</button>
+      <h2 class="modal__title" align="center">please enter your password</h2>
+      <p align="center"><input name="password" id="password" class="modal__content" placeholder="Password"/></p>
+      <div class="modal__actions" align="center">
+        <button class="btn btn--passive">Log out (Cancel)</button>
+        <button class="btn">Enter</button>
       </div>
     </div>
     <header>
@@ -23,7 +24,7 @@
       <button>Log out</button>
     </header>
     <main>
-      <section>
+      <section align="center">
         <p>personal information</p>
       </section>
       <img src="" alt="">

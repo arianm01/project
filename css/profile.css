@@ -42,11 +42,98 @@ header button{
     cursor: pointer;
 }
 .modal{
+    position: fixed;
+    z-index: 100;
+    border-radius: 10px;
+    width: 80%;
+    top: 20%;
+    left: 10%;
+    background: #8f94fb;  /* fallback for old browsers */
+    box-shadow: 0 1px 10px black ;
     display: none;
 }
+.modal.visible{
+    display: block;
+    animation: reverse 0.5s ease-out forwards;
+}
+.modal .modal__title{
+    margin: 0;
+    padding: 3%;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #00329e;
+    background: #00329e;
+    color: white;
+}
+.modal .modal__content{
+    width: 70%;
+    color: #606c88;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 3%;
+    text-align: center;
+    outline: none;
+}
+.modal .modal__actions {
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+  }
 header button:hover,
 header button:active {
     color: red;
     background-color: wheat;
     border: 2px solid wheat;
 }
+.btn {
+    font: inherit;
+    padding: 0.5% 1.5%;
+    border: 1px solid #00329e;
+    background: #00329e;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 10px black;
+    cursor: pointer;
+    margin: 0 1%;
+  }
+.btn--passive{
+  background: #d30808;
+  color: white;
+  border-color: #d30808;
+}
+#backdrop{
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+    height: 100%;
+}
+#backdrop.visible{
+    display: block;
+    pointer-events: all;
+}
+[class*="col-"]{
+    width: 100%;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
