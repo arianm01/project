@@ -7,10 +7,8 @@ html{
 
 body{
     margin: 0;
-    background: #606c88;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+    background: #404040;  /* fallback for old browsers */
+  }
 
 button:focus{
     outline: none;
@@ -30,14 +28,14 @@ header h1 {
     color: whitesmoke;
     font-size: 25px;
 }
-header button{
+.header-btn{
     padding: 0.75% 1.5%;
     border-radius: 20px;
     outline: none;
     background: #3f4c6b;
-  border-color: #606c88;
-  border: 2px solid darkslategray;
-  color: #34e89e; 
+    border-color: #606c88;
+    border: 2px solid darkslategray;
+    color: #34e89e; 
     box-shadow: none;
     cursor: pointer;
 }
@@ -93,8 +91,8 @@ header button:active {
 .btn {
     font: inherit;
     padding: 0.5% 1.5%;
-    border: 1px solid #00329e;
-    background: #00329e;
+    border: 1px solid rgb(41, 148, 41);
+    background: rgb(41, 148, 41);
     color: white;
     border-radius: 6px;
     box-shadow: 0 1px 10px black;
@@ -119,6 +117,93 @@ header button:active {
     display: block;
     pointer-events: all;
 }
+section{
+    color:white;
+    font-size: 25px;
+    padding: 1%;
+}
+section p:first-child{
+    padding-bottom: 7%;
+}
+.container{
+    padding: 5%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 1px 10px black;
+    -webkit-box-shadow:0 1px 10px black;
+    text-align: center;
+    background-color: white;
+}
+.container:hover .avatar-flip {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+.avatar-flip {
+    border-radius: 100px;
+    overflow: hidden;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    top: -50px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 10px royalblue;
+  }
+  .avatar-flip img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+.container:hover .avatar-flip img:first-child {
+    opacity: 0;
+  }
+  .container:hover .avatar-flip img:last-child {
+    opacity: 1;
+}
+.avatar-flip img:first-child {
+    z-index: 1;
+  }
+  .avatar-flip img:last-child {
+    z-index: 0;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    opacity: 0;
+  }
+div h2{
+    color: black;
+    font-size: 30px;
+}
+div h4{
+    color: teal;
+    font-size: 20px;
+}
+div p{
+    color: black;
+    font-size: 25px;
+}
+.btn-show{
+    color: red;
+    background: transparent;
+    border: none;
+    padding: 1%;
+    box-shadow: none;
+}
+.btn1{
+    font: inherit;
+    padding: 0.5% 1.5%;
+    border: none;
+    background: transparent;
+    color: teal;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 1%;
+    margin: 0 1%;
+}
 [class*="col-"]{
     width: 100%;
 }
@@ -130,7 +215,8 @@ header button:active {
     .col-4 {width: 33.33%;}
     .col-5 {width: 41.66%;}
     .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
+    .col-7 {width: 60%;
+        margin-left: 20%}
     .col-8 {width: 66.66%;}
     .col-9 {width: 75%;}
     .col-10 {width: 83.33%;}
