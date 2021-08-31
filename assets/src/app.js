@@ -3,7 +3,7 @@ const phoneIn = document.getElementById("phone");
 const passIn = document.getElementById("password");
 const profileIn = document.getElementById("profilePic");
 const signUp = document.getElementById("submit");
-const dbRequest = indexedDB.open("ourStorage", 2);
+const dbRequest = indexedDB.open("ourStorage", 3);
 let objStore, db;
 
 dbRequest.onupgradeneeded = (event) => {
