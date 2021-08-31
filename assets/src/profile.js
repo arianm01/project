@@ -10,6 +10,7 @@ const dbRequest = indexedDB.open("ourStorage", 3);
 const avatar = document.getElementById('avatar');
 const namee = document.getElementById('name');
 const phone = document.getElementById('phone');
+let nm;
 let db,objStore;
 dbRequest.onupgradeneeded = (event) => {
     db = event.target.result;
@@ -33,39 +34,67 @@ dbRequest.onerror = (event) => {
     backdrop.classList.toggle("visible");
 }
 
-cancelBtn.addEventListener('click',()=>{
-    location.assign('http://127.0.0.1:5500/index.html');
-});
+// cancelBtn.addEventListener('click',()=>{
+//     location.assign('http://127.0.0.1:5500/index.html');
+// });
 
-loginBtn.addEventListener('click',()=>{
-    const pass = password.value;
-    const users = db.transaction('users','readwrite').objectStore('users');
-    const request = users.get(pass);
-    request.onsuccess=()=>{
-        console.log(request.result);
-        if (request.result === undefined) {
-            alert('sorry there is no match in our database for this password please try again.');
-            return;
-        }
-        const result = request.result;
-        avatar.setAttribute('src',result.avatar);
-        namee.innerText = 'Hi ' + result.name;
-        phone.innerText = 'Phone : ' + result.phone;
-        closeModal();
-    }
-});
+// loginBtn.addEventListener('click',()=>{
+//     const pass = password.value;
+//     const users = db.transaction('users','readwrite').objectStore('users');
+//     const request = users.get(pass);
+//     request.onsuccess=()=>{
+//         console.log(request.result);
+//         if (request.result === undefined) {
+//             alert('sorry there is no match in our database for this password please try again.');
+//             return;
+//         }
+//         const result = request.result;
+//         nm=result.name;
+//         avatar.setAttribute('src',result.avatar);
+//         namee.innerText = 'Hi ' + result.name;
+//         phone.innerText = 'Phone : ' + result.phone;
+//         // closeModal();
+//         localStorage.setItem('password',result.password);
+//     }
+// });
 
 logoutBtn.addEventListener('click',()=>{
+  localStorage.removeItem('password');
   location.assign('http://127.0.0.1:5500/index.html');
 });
 
-function closeModal(){
-    loginModal.classList.remove('visible');
-    toggleBackdrop();
-}
+// function closeModal(){
+//     loginModal.classList.remove('visible');
+//     toggleBackdrop();
+// }
 
-loginModal.classList.add('visible');
-toggleBackdrop();
+// loginModal.classList.add('visible');
+// toggleBackdrop();
 insertBtn.addEventListener('click',()=>{
+  localStorage.removeItem('user');
+  localStorage.setItem('user',nm);
   location.assign('http://127.0.0.1:5500/insert.html');
 });
+showBtn.addEventListener('click',()=>{
+  location.assign('http://127.0.0.1:5500/showProduct.html');
+});
+setTimeout(c,15);
+function c (){
+      const users = db.transaction('users','readwrite').objectStore('users');
+      console.log('hi');
+      const request = users.get(localStorage.getItem('password'));
+      request.onsuccess=()=>{
+          console.log(request.result);
+          if (request.result === undefined) {
+              alert('sorry there is no match in our database for this password please try again.');
+              return;
+          }
+          const result = request.result;
+          nm=result.name;
+          avatar.setAttribute('src',result.avatar);
+          namee.innerText = 'Hi ' + result.name;
+          phone.innerText = 'Phone : ' + result.phone;
+          // closeModal();
+          localStorage.setItem('password',result.password);
+      }
+  };

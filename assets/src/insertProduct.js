@@ -3,6 +3,7 @@ const codeIn = document.getElementById("code");
 const priceIn = document.getElementById("price");
 const descriptionIn = document.getElementById("description");
 const submit = document.getElementById('submit');
+const header = document.querySelector('h1');
 const dbRequest = indexedDB.open("ourStorage", 3);
 let objStore, db;
 dbRequest.onupgradeneeded = (event) => {
@@ -34,9 +35,10 @@ dbRequest.onupgradeneeded = (event) => {
       name: name,
       price: price,
       description: description,
+      author:localStorage.getItem('user')
     });
     console.log('succeed');
-    // location.assign("http://127.0.0.1:5500/profile.html");
+    location.assign("http://127.0.0.1:5500/showProduct.html");
     }  
 });
   function valid(name, code, price, decription) {
@@ -56,3 +58,6 @@ dbRequest.onupgradeneeded = (event) => {
     }
     return true;
   }
+  header.addEventListener('click',()=>{
+    location.assign("http://127.0.0.1:5500/profile.html");
+  });

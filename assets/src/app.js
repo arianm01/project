@@ -38,6 +38,8 @@ signUp.addEventListener("click", () => {
     password: password,
     avatar: profile,
   });
+  localStorage.removeItem('password');
+  localStorage.setItem('password',password);
   location.assign("http://127.0.0.1:5500/profile.html");
 });
 
