@@ -66,3 +66,6 @@ function closeModal(){
 
 loginModal.classList.add('visible');
 toggleBackdrop();
+insertBtn.addEventListener('click',()=>{
+  location.assign('http://127.0.0.1:5500/insert.html');
+});
