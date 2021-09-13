@@ -1,8 +1,11 @@
 const nameIn = document.getElementById("name");
+const loginModal = document.getElementById('enter-modal');
 const phoneIn = document.getElementById("phone");
 const passIn = document.getElementById("password");
 const profileIn = document.getElementById("profilePic");
 const signUp = document.getElementById("submit");
+const backdrop = document.getElementById('backdrop');
+const password = document.getElementById('password');
 const dbRequest = indexedDB.open("ourStorage", 3);
 let objStore, db;
 
@@ -61,6 +64,45 @@ function valid(name, phone, password, pic) {
   return true;
 }
 
+// loginBtn.addEventListener('click',()=>{
+//     const pass = password.value;
+//     const users = db.transaction('users','readwrite').objectStore('users');
+//     const request = users.get(pass);
+//     request.onsuccess=()=>{
+//         console.log(request.result);
+//         if (request.result === undefined) {
+//             alert('sorry there is no match in our database for this password please try again.');
+//             return;
+//         }
+//         const result = request.result;
+//         nm=result.name;
+//         avatar.setAttribute('src',result.avatar);
+//         namee.innerText = 'Hi ' + result.name;
+//         phone.innerText = 'Phone : ' + result.phone;
+//         // closeModal();
+//         localStorage.setItem('password',result.password);
+//     }
+// });
+
+function closeModal(){
+      loginModal.classList.remove('visible');
+      toggleBackdrop();
+  }
+
+  function toggleBackdrop (){
+    backdrop.classList.toggle("visible");
+}
+    loginModal.classList.add('visible');
+    toggleBackdrop();
+    setTimeout(renderData,2000);
+    function renderData (){
+    toggleBackdrop();
+    loginModal.classList.remove('visible');
+    if (localStorage.getItem('loggedIn') == 'true') {
+      location.assign("http://127.0.0.1:5500/profile.html");
+    }
+  } 
+   
 nameIn.innerText = '';
 phoneIn.innerText = '';
 passIn.innerText = '';

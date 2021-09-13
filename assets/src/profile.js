@@ -30,9 +30,9 @@ dbRequest.onerror = (event) => {
     console.error(event);
   };
 
-  function toggleBackdrop (){
-    backdrop.classList.toggle("visible");
-}
+//   function toggleBackdrop (){
+//     backdrop.classList.toggle("visible");
+// }
 
 // cancelBtn.addEventListener('click',()=>{
 //     location.assign('http://127.0.0.1:5500/index.html');
@@ -60,6 +60,7 @@ dbRequest.onerror = (event) => {
 
 logoutBtn.addEventListener('click',()=>{
   localStorage.removeItem('password');
+  localStorage.setItem('loggedIn','false');
   location.assign('http://127.0.0.1:5500/index.html');
 });
 
@@ -78,8 +79,8 @@ insertBtn.addEventListener('click',()=>{
 showBtn.addEventListener('click',()=>{
   location.assign('http://127.0.0.1:5500/showProduct.html');
 });
-setTimeout(c,15);
-function c (){
+setTimeout(renderData,15);
+function renderData (){
       const users = db.transaction('users','readwrite').objectStore('users');
       console.log('hi');
       const request = users.get(localStorage.getItem('password'));
@@ -96,5 +97,6 @@ function c (){
           phone.innerText = 'Phone : ' + result.phone;
           // closeModal();
           localStorage.setItem('password',result.password);
+          localStorage.setItem('loggedIn','true');
       }
   };
