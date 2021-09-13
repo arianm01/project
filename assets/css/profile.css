@@ -39,12 +39,12 @@ header h1 {
     box-shadow: none;
     cursor: pointer;
 }
-.modal{
+/* .modal{
     position: fixed;
     z-index: 100;
     border-radius: 10px;
     top: 20%;
-    background: #8f94fb;  /* fallback for old browsers */
+    background: #8f94fb;
     box-shadow: 0 1px 10px black ;
     display: none;
 }
@@ -117,7 +117,7 @@ header button:active {
 #backdrop.visible{
     display: block;
     pointer-events: all;
-}
+} */
 section{
     color:white;
     font-size: 25px;
