@@ -113,12 +113,12 @@ function loadList() {
         productEl.classList.add='item';
         productEl.style.display = 'flex';
         productEl.innerHTML = `
-        <div class='avatar'>
-        <img src="${product.image}" width="150px" height="150px" style="border-radius: 100px;" id="product${product.id}">
+        <div class='avatar' style="">
+        <img src="${product.image}" width="150px" height="150px" style="border-radius: 50px;" id="${product.id}">
         </div>
         <div class= "title">
-        <h2 style="color: azure;">title</h2>
         <p style="color: azure;">${product.title}</p>
+        <h3>${product.price}$</h3>
         </div>
         <div>
         <hr width="100%">
@@ -130,7 +130,8 @@ function loadList() {
         console.log(btns);
         btns.forEach(btn => {
           btn.addEventListener('click',event => {
-            console.log(event.target.id);
+              localStorage.setItem('product',`${event.target.id}`);
+              location.assign("http://127.0.0.1:5500/showApi.html");
           });
       });
     }

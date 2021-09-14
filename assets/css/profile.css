@@ -153,7 +153,10 @@ section p:first-child{
     box-shadow: 0 0 0 10px royalblue;
   }
   .avatar{
-      margin-top: 0.75%;
+      background-color: khaki;
+      margin: 1%;
+      padding: 1%;
+      cursor: pointer;
   }
   .avatar-flip img {
     position: absolute;
@@ -184,6 +187,10 @@ div h2{
 }
 div h4{
     color: teal;
+    font-size: 20px;
+}
+div h3{
+    color: rgb(38, 204, 204);
     font-size: 20px;
 }
 div p{
