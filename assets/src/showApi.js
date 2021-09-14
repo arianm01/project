@@ -5,6 +5,7 @@ const title = document.getElementById("name");
 const price = document.getElementById("price");
 const description = document.getElementById("description");
 const count = document.getElementById('count');
+const header = document.querySelector('h1');
 
 loadData();
 
@@ -18,9 +19,12 @@ function loadData(){
         rating.innerText = product.rating.rate + "/5 Stars";
         avatar.setAttribute('src',product.image);
         title.innerText = product.title;
-        price.innerText = product.price;
+        price.innerText = product.price+" $";
         description.innerText = product.description;
-        count.innerText = product.rating.count; 
+        count.innerText = "in stock: "+product.rating.count; 
     }
     xhr.send();
 }
+header.addEventListener('click',()=>{
+    location.assign("http://127.0.0.1:5500/profile.html");
+  });

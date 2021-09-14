@@ -39,66 +39,6 @@ header h1 {
     box-shadow: none;
     cursor: pointer;
 }
-/* .modal{
-    position: fixed;
-    z-index: 100;
-    border-radius: 10px;
-    top: 20%;
-    background: #8f94fb;
-    box-shadow: 0 1px 10px black ;
-    display: none;
-}
-.modal.visible{
-    display: block;
-    animation: reverse 0.5s ease-out forwards;
-}
-.modal .modal__title{
-    margin: 0;
-    padding: 3%;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #00329e;
-    background: #00329e;
-    color: white;
-}
-.modal .modal__content{
-    width: 70%;
-    color: #606c88;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 15px;
-    background-color: aliceblue;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    box-sizing: border-box;
-    margin: 3%;
-    text-align: center;
-    outline: none;
-}
-.modal .modal__actions {
-    padding: 3%;
-    display: flex;
-    justify-content: center;
-  }
-header button:hover,
-header button:active {
-    color: red;
-    background-color: wheat;
-    border: 2px solid wheat;
-}
-#backdrop{
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    display: none;
-    pointer-events: none;
-    z-index: 10;
-    height: 100%;
-}
-#backdrop.visible{
-    display: block;
-    pointer-events: all;
-} */
 .btn:focus{
     border: 2px solid black;
 }

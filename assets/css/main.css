@@ -146,8 +146,53 @@ header button:active {
     pointer-events: all;
 }
 
-
-
+/*
+other page
+*/
+header h1{
+    cursor: pointer;
+}
+.main2{
+    background-color: khaki;
+    padding-bottom: 1%;
+    margin: auto;
+    border-radius: 5%;
+}
+.title{
+    padding-top: 5%;
+    padding-bottom: 2%;
+    color: tomato;
+    font-size: 25px;
+    font-weight: bold;
+}
+.name2,.avatar{
+    width: 74%;
+    letter-spacing: 1px;
+    padding: 0.4%;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-left: 13%;
+    text-align: center;
+    outline: none;
+}
+div h1{
+    color: navy;
+    font-size: 30px;
+}
+div h4{
+    color: teal;
+    font-size: 20px;
+}
+div h3{
+    color: rgb(38, 204, 204);
+    font-size: 20px;
+}
+div p{
+    color: black;
+    font-size: 25px;
+}
 
 [class*="col-"]{
     width: 100%;
