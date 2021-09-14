@@ -7,6 +7,7 @@ const namee = document.getElementById("name");
 const phone = document.getElementById("phone");
 const showApi = document.getElementById("showApi");
 const lists = document.querySelector("#products");
+let btns;
 let nm;
 let db, objStore;
 dbRequest.onupgradeneeded = (event) => {
@@ -79,7 +80,6 @@ showBtn.addEventListener("click", () => {
 setTimeout(renderData, 15);
 function renderData() {
   const users = db.transaction("users", "readwrite").objectStore("users");
-  console.log("hi");
   const request = users.get(localStorage.getItem("password"));
   request.onsuccess = () => {
     console.log(request.result);
@@ -110,17 +110,28 @@ function loadList() {
       list.forEach((product) => {
         const productEl = document.createElement("div");
         productEl.classList.add='col-8';
+        productEl.classList.add='item';
         productEl.style.display = 'flex';
         productEl.innerHTML = `
-        <img src="${product.image}" width="100px" height="100px" style="border-radius: 5px;">
-        <div>
+        <div class='avatar'>
+        <img src="${product.image}" width="150px" height="150px" style="border-radius: 100px;" id="product${product.id}">
+        </div>
+        <div class= "title">
         <h2 style="color: azure;">title</h2>
         <p style="color: azure;">${product.title}</p>
+        </div>
         <div>
-        <hr width="1000px">
+        <hr width="100%">
+        </div>
         `;
-        
         lists.appendChild(productEl);
+        });
+        btns = lists.querySelectorAll('img');
+        console.log(btns);
+        btns.forEach(btn => {
+          btn.addEventListener('click',event => {
+            console.log(event.target.id);
+          });
       });
     }
   };
